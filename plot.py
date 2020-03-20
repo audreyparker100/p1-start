@@ -17,8 +17,8 @@ stress = data[0: maxrange, 3]
 strain = data[0:maxrange, 7]
 iDash=filename.rindex('-')
 mylabel= filename[iDash+1:-4]
-plt.plot(stress,strain, color= 'b', linestyle='-', label= mylabel)
-plt.show()
+plt.plot(strain,stress, color= 'b', linestyle='-', label= mylabel)
+
 
 ## Part 1
 # Figure out what columns and rows of data we need to plot
@@ -26,7 +26,12 @@ plt.show()
 # plot raw-data/Sp15_245L_sect-001_group-1_glass.raw
 # Make sure to include axis labels and units!
 # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
+m, b = np.polyfit(strain,stress,1)
 
+plt.plot(strain,m*strain + b)
+plt.savefig(filename+'.pdf')
+
+plt.show()
 
 ## Part 2
 # Check to see if your code in part 1 will plot all of the files in raw-data/
@@ -45,6 +50,8 @@ plt.show()
 # plots and Young's moduli for all of the cleaned up files in your data 
 # directory. If you haven't already, this is a good time to add text to 
 # your .gitignore file so you're not committing the figures to your repository.
+
+print("Yung's Modulus : "+str(m))
 
 
 
