@@ -19,7 +19,7 @@ iDash=filename.rindex('-')
 mylabel= filename[iDash+1:-4]
 plt.plot(strain,stress, color= 'b', linestyle='-', label= mylabel)
 plt.xlabel('Strain')
-plt.ylabel('Stress (MPa')
+plt.ylabel('Stress (MPa)')
 
 
 ## Part 1
