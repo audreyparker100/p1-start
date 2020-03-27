@@ -28,7 +28,7 @@ plt.legend(loc='best')
 # plot raw-data/Sp15_245L_sect-001_group-1_glass.raw
 # Make sure to include axis labels and units!
 # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
-m, b = np.polyfit(strain[:100],stress[:100],1)
+m, b = np.polyfit(strain,stress,1)#can change the length of the data that is fitted by doing [:(insert desired number here)]
 
 plt.plot(strain,m*strain + b,color= 'r', linestyle='--', label= 'Linear Regression')
 plt.savefig(filename+'.pdf')
