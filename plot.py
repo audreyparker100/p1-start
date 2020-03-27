@@ -30,7 +30,7 @@ plt.ylabel('Stress [MPa]')
 # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
 m, b = np.polyfit(strain[:100],stress[:100],1)
 
-plt.plot(strain,m*strain + b)
+plt.plot(strain,m*strain + b,color= 'r', linestyle='--')
 plt.savefig(filename+'.pdf')
 
 plt.show()
