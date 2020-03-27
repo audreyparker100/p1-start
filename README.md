@@ -6,3 +6,5 @@ How to run it:
 An example
 
 The user should expect...
+
+Things I have learned throughout this project is how to navigate the command line terminal using bash and python. It has been really useful to know 
