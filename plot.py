@@ -13,8 +13,8 @@ data = np.loadtxt(filename,comments='"',delimiter=",")   # Attempts to load file
 #   $ python plot.py raw-data/Sp15_245L_sect-001_group-1_glass.raw
 # at the command line.
 maxrange = (len(data)-1)
-stress = data[0: maxrange, 3]
-strain = data[0:maxrange, 7]
+stress = -data[0: maxrange, 3]
+strain = -data[0:maxrange, 7]
 iDash=filename.rindex('-')
 mylabel= filename[iDash+1:-4]
 plt.plot(strain,stress, color= 'b', linestyle='-', label= mylabel)
@@ -28,7 +28,7 @@ plt.ylabel('Stress [MPa]')
 # plot raw-data/Sp15_245L_sect-001_group-1_glass.raw
 # Make sure to include axis labels and units!
 # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
-m, b = np.polyfit(strain,stress,1)
+m, b = np.polyfit(strain[:100],stress[:100],1)
 
 plt.plot(strain,m*strain + b)
 plt.savefig(filename+'.pdf')
