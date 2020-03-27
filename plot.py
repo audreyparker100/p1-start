@@ -20,7 +20,7 @@ mylabel= filename[iDash+1:-4]
 plt.plot(strain,stress, color= 'b', linestyle='-', label= mylabel)
 plt.xlabel('Strain [Exten.] %')
 plt.ylabel('Stress [MPa]')
-
+plt.legend(loc='best')
 
 ## Part 1
 # Figure out what columns and rows of data we need to plot
@@ -32,7 +32,7 @@ m, b = np.polyfit(strain[:100],stress[:100],1)
 
 plt.plot(strain,m*strain + b,color= 'r', linestyle='--')
 plt.savefig(filename+'.pdf')
-
+plt.legend(loc='best')
 plt.show()
 
 ## Part 2
