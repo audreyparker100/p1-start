@@ -53,7 +53,7 @@ plt.show()
 # directory. If you haven't already, this is a good time to add text to 
 # your .gitignore file so you're not committing the figures to your repository.
 
-print("Yung's Modulus : "+str(m))
+print("Young's Modulus : "+str(m))
 
 
 
